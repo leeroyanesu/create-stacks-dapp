@@ -1,6 +1,6 @@
 {
   "name": "create-stx-dapp",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "CLI tool to scaffold a Stacks dapp with Vite + React + Tailwind CSS",
   "type": "module",
   "bin": {
