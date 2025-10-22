@@ -4,7 +4,7 @@
   "description": "CLI tool to scaffold a Stacks dapp with Vite + React + Tailwind CSS",
   "type": "module",
   "bin": {
-    "create-stx-dapp": "./dist/index.js"
+    "create-stx-dapp": "dist/index.js"
   },
   "files": [
     "dist"
