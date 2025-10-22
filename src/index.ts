@@ -23,10 +23,6 @@ interface Template {
   };
 }
 
-interface TemplateConfig {
-  templates: Template[];
-}
-
 interface PackageManager {
   name: string;
   installCommand: string;
@@ -170,45 +166,36 @@ async function checkRequirements(): Promise<{ node: boolean; git: boolean; packa
   };
 }
 
-function loadTemplates(): Template[] {
-  try {
-    const configPath = path.join(__dirname, 'templates.json');
-    if (!fs.existsSync(configPath)) {
-      throw new Error('templates.json not found');
+// Built-in templates - no external file needed
+const BUILT_IN_TEMPLATES: Template[] = [
+  {
+    name: 'Vite + React + Tailwind CSS',
+    description: 'Modern stacks starter dapp with Vite, React 19, TypeScript, and Tailwind CSS',
+    repoUrl: 'https://github.com/leeroyanesu/vite-stacks-dapp-template.git',
+    tags: ['vite', 'react', 'tailwind', 'typescript', 'recommended'],
+    requirements: {
+      node: '>=22.0.0',
+      git: true
     }
-    
-    const configData = fs.readFileSync(configPath, 'utf-8');
-    const config: TemplateConfig = JSON.parse(configData);
-    
-    if (!config.templates || !Array.isArray(config.templates)) {
-      throw new Error('Invalid templates.json format');
-    }
-
-    // Validate each template
-    const validTemplates = config.templates.filter(template => {
-      const validation = validateTemplate(template);
-      if (!validation.valid) {
-        Logger.warning(`Skipping invalid template "${template.name}": ${validation.reason}`);
-        return false;
-      }
-      return true;
-    });
-
-    if (validTemplates.length === 0) {
-      throw new Error('No valid templates found');
-    }
-
-    return validTemplates;
-  } catch (error: any) {
-    // Fallback to hardcoded templates if config file is not found or invalid
-    Logger.warning(`Could not load templates.json (${error.message}), using default templates`);
-    return [{
-      name: 'Vite + React + Tailwind CSS',
-      description: 'Modern stacks starter dapp with Vite, React 19, TypeScript, and Tailwind CSS',
-      repoUrl: 'https://github.com/leeroyanesu/vite-stacks-dapp-template.git',
-      tags: ['vite', 'react', 'tailwind', 'typescript', 'recommended'],
-    }];
   }
+];
+
+function loadTemplates(): Template[] {
+  // Validate each built-in template
+  const validTemplates = BUILT_IN_TEMPLATES.filter(template => {
+    const validation = validateTemplate(template);
+    if (!validation.valid) {
+      Logger.warning(`Skipping invalid template "${template.name}": ${validation.reason}`);
+      return false;
+    }
+    return true;
+  });
+
+  if (validTemplates.length === 0) {
+    throw new CLIError('No valid templates found', 'NO_TEMPLATES');
+  }
+
+  return validTemplates;
 }
 
 function createInterface() {

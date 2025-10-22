@@ -20,7 +20,7 @@ export const CONFIG = {
   NODEJS_URL: 'https://nodejs.org/',
   GIT_URL: 'https://git-scm.com/',
   
-  // Default template fallback
+    // Default template fallback (should match BUILT_IN_TEMPLATES[0])
   DEFAULT_TEMPLATE: {
     name: 'Vite + React + Tailwind CSS',
     description: 'Modern stacks starter dapp with Vite, React 19, TypeScript, and Tailwind CSS',
