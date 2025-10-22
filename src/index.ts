@@ -81,25 +81,40 @@ class Spinner {
   private interval: NodeJS.Timeout | null = null;
   private frames = CONFIG.SPINNER_FRAMES;
   private currentFrame = 0;
+  private text = '';
 
   start(text: string) {
+    this.text = text;
+    
     if (!isInteractive()) {
       Logger.info(text);
       return;
     }
     
-    process.stdout.write(`\x1b[36m${this.frames[0]} ${text}\x1b[0m`);
+    // Hide cursor and start animation
+    process.stdout.write('\x1b[?25l');
+    this.render();
+    
     this.interval = setInterval(() => {
-      process.stdout.write('\r');
       this.currentFrame = (this.currentFrame + 1) % this.frames.length;
-      process.stdout.write(`\x1b[36m${this.frames[this.currentFrame]} ${text}\x1b[0m`);
+      this.render();
     }, CONFIG.SPINNER_INTERVAL);
+  }
+
+  private render() {
+    const frame = this.frames[this.currentFrame];
+    process.stdout.write(`\r\x1b[36m${frame} ${this.text}\x1b[0m`);
   }
 
   stop(successText?: string, error?: boolean) {
     if (this.interval) {
       clearInterval(this.interval);
       this.interval = null;
+    }
+    
+    // Show cursor again
+    if (isInteractive()) {
+      process.stdout.write('\x1b[?25h');
     }
     
     if (!isInteractive()) {
@@ -109,7 +124,8 @@ class Spinner {
       return;
     }
     
-    process.stdout.write('\r');
+    // Clear the line and show result
+    process.stdout.write('\r\x1b[K');
     if (successText) {
       const icon = error ? '❌' : '✅';
       const color = error ? '\x1b[31m' : '\x1b[32m';
