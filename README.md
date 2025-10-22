@@ -182,7 +182,7 @@ The generated projects include:
 
 **Error: Command not found**
 ```bash
-# Make sure you have Node.js 18+ installed
+# Make sure you have Node.js 22+ installed
 node --version
 
 # Update npm to latest version
@@ -230,7 +230,7 @@ We welcome contributions! Here's how you can help:
      "repoUrl": "https://github.com/username/your-template-repo.git",
      "tags": ["tag1", "tag2", "tag3"],
      "requirements": {
-       "node": ">=18.0.0",
+       "node": ">=22.0.0",
        "git": true
      }
    }

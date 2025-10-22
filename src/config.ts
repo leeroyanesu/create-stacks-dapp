@@ -2,7 +2,7 @@
 export const CONFIG = {
   // CLI settings
   CLI_NAME: 'create-stacks-dapp',
-  CLI_VERSION: '1.0.0',
+  CLI_VERSION: '1.0.5',
   
   // Git settings
   DEFAULT_COMMIT_MESSAGE: 'Initial commit from create-stacks-dapp',

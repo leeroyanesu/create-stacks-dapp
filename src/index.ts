@@ -158,6 +158,16 @@ async function checkRequirements(): Promise<{ node: boolean; git: boolean; packa
   const nodeCheck = execCommand('node --version', undefined, true);
   const gitCheck = execCommand('git --version', undefined, true);
   
+  // Check Node.js version is 22.0.0 or higher
+  let nodeVersionValid = false;
+  if (nodeCheck.success && nodeCheck.output) {
+    const versionMatch = nodeCheck.output.match(/v(\d+)\.(\d+)\.(\d+)/);
+    if (versionMatch) {
+      const [, major, minor, patch] = versionMatch.map(Number);
+      nodeVersionValid = major >= 22;
+    }
+  }
+  
   // Detect available package managers
   const packageManagers: PackageManager[] = [
     { name: 'bun', installCommand: 'install', runCommand: '', available: false },
@@ -176,7 +186,7 @@ async function checkRequirements(): Promise<{ node: boolean; git: boolean; packa
   spinner.stop('System requirements checked');
 
   return {
-    node: nodeCheck.success,
+    node: nodeCheck.success && nodeVersionValid,
     git: gitCheck.success,
     packageManager: availablePackageManager
   };
@@ -394,8 +404,8 @@ async function main() {
   const requirements = await checkRequirements();
   
   if (!requirements.node) {
-    Logger.error('Node.js is required but not found');
-    Logger.warning(`   Please install Node.js from ${CONFIG.NODEJS_URL}`);
+    Logger.error('Node.js 22.0.0 or higher is required');
+    Logger.warning(`   Please install Node.js 22+ from ${CONFIG.NODEJS_URL}`);
     process.exit(1);
   }
 

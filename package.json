@@ -25,11 +25,19 @@
   ],
   "author": "Leeroy Chako",
   "license": "MIT",
+  "homepage": "https://github.com/leeroyanesu/create-stacks-dapp#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/leeroyanesu/create-stacks-dapp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/leeroyanesu/create-stacks-dapp/issues"
+  },
   "devDependencies": {
-    "@types/node": "^20.0.0",
+    "@types/node": "^22.0.0",
     "typescript": "^5.3.0"
   },
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=22.0.0"
   }
 }
