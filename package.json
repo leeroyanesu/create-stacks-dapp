@@ -1,6 +1,6 @@
 {
   "name": "create-stacks-dapp",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "CLI tool to scaffold a Stacks dapp with Vite + React + Tailwind CSS",
   "type": "module",
   "bin": {
@@ -35,6 +35,8 @@
   },
   "devDependencies": {
     "@types/node": "^22.0.0",
+    "dotenv": "^8.2.0",
+    "node-fetch": "^3.3.2",
     "typescript": "^5.3.0"
   },
   "engines": {
