@@ -53,7 +53,7 @@ export function handleError(error: unknown): never {
     process.exit(error.exitCode);
   } else if (error instanceof Error) {
     Logger.error(`An unexpected error occurred: ${error.message}`);
-    Logger.dim('If this error persists, please report it at: https://github.com/leeroyanesu/create-stx-dapp/issues');
+    Logger.dim('If this error persists, please report it at: https://github.com/leeroyanesu/create-stacks-dapp/issues');
     process.exit(1);
   } else {
     Logger.error('An unknown error occurred');

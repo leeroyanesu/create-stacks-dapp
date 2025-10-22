@@ -211,7 +211,7 @@ git --version
 
 - 📚 [Stacks Documentation](https://docs.stacks.co/)
 - 💬 [Stacks Discord](https://discord.gg/stacks)
-- 🐛 [Report Issues](https://github.com/leeroyanesu/create-stx-dapp/issues)
+- 🐛 [Report Issues](https://github.com/leeroyanesu/create-stacks-dapp/issues)
 
 ## Contributing
 
@@ -250,8 +250,8 @@ Templates should:
 
 ```bash
 # Clone the repository
-git clone https://github.com/leeroyanesu/create-stx-dapp.git
-cd create-stx-dapp
+git clone https://github.com/leeroyanesu/create-stacks-dapp.git
+cd create-stacks-dapp
 
 # Install dependencies
 bun install
@@ -301,4 +301,4 @@ MIT © [Leeroy Chako](https://github.com/leeroyanesu)
 
 **Happy building on Stacks! 🏗️**
 
-For questions, feedback, or contributions, feel free to reach out on [GitHub](https://github.com/leeroyanesu/create-stx-dapp) or [Discord](https://discord.gg/stacks).
+For questions, feedback, or contributions, feel free to reach out on [GitHub](https://github.com/leeroyanesu/create-stacks-dapp) or [Discord](https://discord.gg/stacks).

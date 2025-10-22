@@ -1,11 +1,11 @@
 // Configuration constants
 export const CONFIG = {
   // CLI settings
-  CLI_NAME: 'create-stx-dapp',
+  CLI_NAME: 'create-stacks-dapp',
   CLI_VERSION: '1.0.0',
   
   // Git settings
-  DEFAULT_COMMIT_MESSAGE: 'Initial commit from create-stx-dapp',
+  DEFAULT_COMMIT_MESSAGE: 'Initial commit from create-stacks-dapp',
   GIT_CLONE_DEPTH: 1,
   
   // Project validation

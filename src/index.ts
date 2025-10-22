@@ -187,7 +187,7 @@ const BUILT_IN_TEMPLATES: Template[] = [
   {
     name: 'Vite + React + Tailwind CSS',
     description: 'Modern stacks starter dapp with Vite, React 19, TypeScript, and Tailwind CSS',
-    repoUrl: 'https://github.com/leeroyanesu/vite-stacks-dapp-template.git',
+    repoUrl: 'https://github.com/leeroyanesu/create-stacks-dapp.git',
     tags: ['vite', 'react', 'tailwind', 'typescript', 'recommended'],
     requirements: {
       node: '>=22.0.0',
@@ -376,17 +376,17 @@ async function main() {
 
   // Show help
   if (flags.help) {
-    Logger.info('\n🚀 create-stx-dapp - Scaffold a Stacks dapp\n', '\x1b[36m\x1b[1m');
+    Logger.info('\n🚀 create-stacks-dapp - Scaffold a Stacks dapp\n', '\x1b[36m\x1b[1m');
     Logger.info('Usage:', '\x1b[36m');
-    Logger.info('  bunx create-stx-dapp <project-name> [options]', '\x1b[33m');
+    Logger.info('  bunx create-stacks-dapp <project-name> [options]', '\x1b[33m');
     Logger.info('\nOptions:', '\x1b[36m');
     Logger.info('  -h, --help     Show this help message', '\x1b[33m');
     Logger.info('  -l, --list     List all available templates', '\x1b[33m');
     Logger.info('  -f, --force    Overwrite existing directory without prompting', '\x1b[33m');
     Logger.info('\nExamples:', '\x1b[36m');
-    Logger.info('  bunx create-stx-dapp my-dapp', '\x1b[33m');
-    Logger.info('  bunx create-stx-dapp my-app --list', '\x1b[33m');
-    Logger.info('  bunx create-stx-dapp my-app --force\n', '\x1b[33m');
+    Logger.info('  bunx create-stacks-dapp my-dapp', '\x1b[33m');
+    Logger.info('  bunx create-stacks-dapp my-app --list', '\x1b[33m');
+    Logger.info('  bunx create-stacks-dapp my-app --force\n', '\x1b[33m');
     process.exit(0);
   }
 
@@ -431,8 +431,8 @@ async function main() {
 
   if (!projectName) {
     Logger.error('Please provide a project name');
-    Logger.info('Usage: bunx create-stx-dapp <project-name>', '\x1b[33m');
-    Logger.dim('Run "bunx create-stx-dapp --help" for more information');
+    Logger.info('Usage: bunx create-stacks-dapp <project-name>', '\x1b[33m');
+    Logger.dim('Run "bunx create-stacks-dapp --help" for more information');
     process.exit(1);
   }
 
@@ -443,7 +443,7 @@ async function main() {
     process.exit(1);
   }
 
-  Logger.info('\n🚀 Welcome to create-stx-dapp!\n', '\x1b[36m\x1b[1m');
+  Logger.info('\n🚀 Welcome to create-stacks-dapp!\n', '\x1b[36m\x1b[1m');
 
   const projectPath = path.resolve(process.cwd(), projectName);
 
