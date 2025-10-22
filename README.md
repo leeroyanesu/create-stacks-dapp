@@ -20,10 +20,10 @@ bunx create-stacks-dapp my-stacks-app
 npx create-stacks-dapp my-stacks-app
 
 # Using pnpm
-pnpm create stacks-dapp my-stacks-app
+pnpm create-stacks-dapp my-stacks-app
 
 # Using yarn
-yarn create stacks-dapp my-stacks-app
+yarn create-stacks-dapp my-stacks-app
 ```
 
 Then follow the prompts to select your preferred template and start building!
