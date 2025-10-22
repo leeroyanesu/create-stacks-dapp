@@ -2,7 +2,7 @@
 
 🚀 **A modern CLI tool to scaffold Stacks blockchain applications with ease**
 
-[![npm version](https://badge.fury.io/js/create-stx-dapp.svg)](https://badge.fury.io/js/create-stx-dapp)
+[![npm version](https://badge.fury.io/js/create-stacks-dapp.svg)](https://badge.fury.io/js/create-stacks-dapp)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Node.js Version](https://img.shields.io/badge/node-%3E%3D22.0.0-brightgreen.svg)](https://nodejs.org/)
 
