@@ -1,0 +1,35 @@
+{
+  "name": "create-stx-dapp",
+  "version": "1.0.1",
+  "description": "CLI tool to scaffold a Stacks dapp with Vite + React + Tailwind CSS",
+  "type": "module",
+  "bin": {
+    "create-stx-dapp": "./dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "bun run build"
+  },
+  "keywords": [
+    "stacks",
+    "blockchain",
+    "dapp",
+    "vite",
+    "react",
+    "tailwindcss",
+    "cli",
+    "scaffolding"
+  ],
+  "author": "Leeroy Chako",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.3.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
