@@ -4,7 +4,7 @@
 
 [![npm version](https://badge.fury.io/js/create-stx-dapp.svg)](https://badge.fury.io/js/create-stx-dapp)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Node.js Version](https://img.shields.io/badge/node-%3E%3D18.0.0-brightgreen.svg)](https://nodejs.org/)
+[![Node.js Version](https://img.shields.io/badge/node-%3E%3D22.0.0-brightgreen.svg)](https://nodejs.org/)
 
 Create Stacks decentralized applications with no build configuration. Get started with modern templates featuring the latest tools and best practices.
 
@@ -51,7 +51,7 @@ Then follow the prompts to select your preferred template and start building!
 
 Before using create-stx-dapp, ensure you have:
 
-- **Node.js** 18.0.0 or later
+- **Node.js** 22.0.0 or later
 - **Git** for repository cloning
 - A package manager: **npm** (comes with Node.js), **yarn**, **pnpm**, or **bun**
 
