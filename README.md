@@ -1,4 +1,4 @@
-# create-stx-dapp
+# create-stacks-dapp
 
 🚀 **A modern CLI tool to scaffold Stacks blockchain applications with ease**
 
@@ -14,16 +14,16 @@ Get up and running in seconds:
 
 ```bash
 # Using bun (recommended)
-bunx create-stx-dapp my-stacks-app
+bunx create-stacks-dapp my-stacks-app
 
 # Using npx
-npx create-stx-dapp my-stacks-app
+npx create-stacks-dapp my-stacks-app
 
 # Using pnpm
-pnpm create stx-dapp my-stacks-app
+pnpm create stacks-dapp my-stacks-app
 
 # Using yarn
-yarn create stx-dapp my-stacks-app
+yarn create stacks-dapp my-stacks-app
 ```
 
 Then follow the prompts to select your preferred template and start building!
@@ -49,7 +49,7 @@ Then follow the prompts to select your preferred template and start building!
 
 ## System Requirements
 
-Before using create-stx-dapp, ensure you have:
+Before using create-stacks-dapp, ensure you have:
 
 - **Node.js** 22.0.0 or later
 - **Git** for repository cloning
@@ -60,13 +60,13 @@ Before using create-stx-dapp, ensure you have:
 ### Basic Usage
 
 ```bash
-bunx create-stx-dapp <project-name>
+bunx create-stacks-dapp <project-name>
 ```
 
 ### Command Line Options
 
 ```bash
-create-stx-dapp <project-name> [options]
+create-stacks-dapp <project-name> [options]
 ```
 
 #### Options
@@ -81,16 +81,16 @@ create-stx-dapp <project-name> [options]
 
 ```bash
 # Create a new project
-bunx create-stx-dapp my-awesome-dapp
+bunx create-stacks-dapp my-awesome-dapp
 
 # List available templates
-bunx create-stx-dapp --list
+bunx create-stacks-dapp --list
 
 # Force overwrite existing directory
-bunx create-stx-dapp my-app --force
+bunx create-stacks-dapp my-app --force
 
 # Show help
-bunx create-stx-dapp --help
+bunx create-stacks-dapp --help
 ```
 
 ### Interactive Mode
@@ -220,9 +220,21 @@ We welcome contributions! Here's how you can help:
 ### Adding New Templates
 
 1. Create a new repository with your template
-2. Ensure it follows the template structure guidelines
-3. Add it to `src/templates.json`
-4. Submit a pull request
+2. Ensure it follows the template structure guidelines  
+3. Submit a GitHub issue or pull request with your template details
+4. Include the template configuration in this format:
+   ```json
+   {
+     "name": "Your Template Name",
+     "description": "Description of your template",
+     "repoUrl": "https://github.com/username/your-template-repo.git",
+     "tags": ["tag1", "tag2", "tag3"],
+     "requirements": {
+       "node": ">=18.0.0",
+       "git": true
+     }
+   }
+   ```
 
 ### Template Guidelines
 
@@ -252,6 +264,12 @@ node dist/index.js my-test-app
 ```
 
 ## Changelog
+
+### v1.0.2
+- Embedded templates directly in CLI code for better reliability
+- Removed external `templates.json` dependency
+- Fixed package.json bin path issues
+- Improved spinner animation and error handling
 
 ### v1.0.1
 - Improved error handling and validation
